@@ -16,8 +16,8 @@ function App() {
       <GridItem area="nav" p="10px">
         <NavBar></NavBar>
       </GridItem>
-      <GridItem bg="gray.800" area="aside" />
-      <GridItem bg="papayawhip" area="main" />
+      <GridItem area="aside" />
+      <GridItem area="main" />
     </Grid>
   );
 }

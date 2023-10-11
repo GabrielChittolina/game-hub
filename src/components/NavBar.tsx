@@ -5,8 +5,8 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Switch,
 } from "@chakra-ui/react";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 const NavBar = () => {
   return (
@@ -16,12 +16,14 @@ const NavBar = () => {
         <InputLeftElement pointerEvents={"none"}>
           <SearchIcon color="gray.300" />
         </InputLeftElement>
-        <Input borderRadius="full" placeholder="Search games..." />
+        <Input
+          borderRadius="full"
+          placeholder="Search games..."
+          _dark={{ bg: "gray.700" }}
+          bg="gray.100"
+        />
       </InputGroup>
-      <HStack>
-        <Switch colorScheme="teal" size="md" />
-        <p>Dark Mode</p>
-      </HStack>
+      <ColorModeSwitch />
     </HStack>
   );
 };
