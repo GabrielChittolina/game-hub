@@ -1,4 +1,5 @@
-import { HStack, Tooltip } from "@chakra-ui/react";
+import { HStack, Tooltip, Icon, Center } from "@chakra-ui/react";
+import { IconType } from "react-icons";
 import { Platform } from "../hooks/useGames";
 import { AiFillAndroid, AiFillApple, AiFillWindows } from "react-icons/ai";
 import { BsNintendoSwitch, BsPlaystation, BsXbox } from "react-icons/bs";
@@ -14,7 +15,7 @@ interface PlatformIconListProps {
 }
 
 const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
-  const iconMap: { [key: string]: string } = {
+  const iconMap: { [key: string]: IconType } = {
     pc: AiFillWindows,
     playstation: BsPlaystation,
     xbox: BsXbox,
@@ -32,14 +33,13 @@ const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
   };
 
   return (
-    <HStack spacing="2" pb={2}>
+    <HStack spacing="2">
       {platforms.map((platform) => {
-        const Icon = iconMap[platform.slug];
         return (
           <Tooltip key={platform.id} label={platform.name} placement="top">
-            <span>
-              <Icon />
-            </span>
+            <Center>
+              <Icon as={iconMap[platform.slug]} />
+            </Center>
           </Tooltip>
         );
       })}
