@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
+import getCroppedImageUrl from "../services/image-url";
 
 interface GameCardProps {
   game: Game;
@@ -22,8 +23,12 @@ const GameCard = ({ game }: GameCardProps) => {
   };
 
   return (
-    <Card maxW="sm">
-      <Image src={game.background_image} alt={game.name} borderTopRadius="lg" />
+    <Card maxW="md">
+      <Image
+        src={getCroppedImageUrl(game.background_image, 600, 400)}
+        alt={game.name}
+        borderTopRadius="lg"
+      />
       <CardBody>
         <HStack justify={"space-between"} mb="2">
           <PlatformIconList
@@ -35,7 +40,7 @@ const GameCard = ({ game }: GameCardProps) => {
               borderRadius="4px"
               px="2"
               colorScheme={metacriticColor()}
-              fontSize="sm"
+              fontSize="md"
             >
               {game.metacritic}
             </Badge>
