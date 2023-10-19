@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CanceledError } from "axios";
+import { AxiosRequestConfig, CanceledError } from "axios";
 
 export default axios.create({
   baseURL: "https://api.rawg.io/api",
@@ -9,3 +9,4 @@ export default axios.create({
 });
 
 export { CanceledError };
+export type { AxiosRequestConfig };
