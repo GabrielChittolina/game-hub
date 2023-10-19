@@ -18,7 +18,7 @@ function App() {
       <GridItem area="nav" p="10px">
         <NavBar></NavBar>
       </GridItem>
-      <GridItem area="aside">
+      <GridItem area="aside" px={5}>
         <GenreList />
       </GridItem>
       <GridItem area="main">
