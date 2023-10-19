@@ -1,12 +1,12 @@
 import useGenres from "../hooks/useGenres";
 import {
-  Link,
   HStack,
   Image,
   Text,
   List,
   ListItem,
   Heading,
+  Spinner,
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 
@@ -18,6 +18,8 @@ const GenreList = () => {
       <Heading size="lg" mb="4">
         Genres
       </Heading>
+      {loading && <Spinner />}
+      {error && data.length === 0 && <Text>{error}</Text>}
       <List spacing={3}>
         {data.map((genre) => (
           <ListItem key={genre.id}>
