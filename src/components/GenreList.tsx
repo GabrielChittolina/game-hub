@@ -11,10 +11,11 @@ import {
 import getCroppedImageUrl from "../services/image-url";
 
 interface GenreListProps {
+  selectedGenre: Genre | null;
   onSelectedGenre: (genre: Genre) => void;
 }
 
-const GenreList = ({ onSelectedGenre }: GenreListProps) => {
+const GenreList = ({ selectedGenre, onSelectedGenre }: GenreListProps) => {
   const { data, error, loading } = useGenres();
 
   return (
@@ -38,8 +39,15 @@ const GenreList = ({ onSelectedGenre }: GenreListProps) => {
                 boxSize="32px"
                 objectFit="cover"
                 borderRadius="md"
+                userSelect={"none"}
               />
-              <Text whiteSpace={"nowrap"}>{genre.name}</Text>
+              <Text
+                whiteSpace={"nowrap"}
+                fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
+                userSelect={"none"}
+              >
+                {genre.name}
+              </Text>
             </HStack>
           </ListItem>
         ))}
