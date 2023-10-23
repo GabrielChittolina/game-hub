@@ -11,7 +11,14 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
 }
 
-const useGames = (genreId: number | undefined) =>
-  useData<Game>("/games", { params: { genres: genreId } }, [genreId]);
+const useGames = (
+  genreId: number | undefined,
+  platformId: number | undefined
+) =>
+  useData<Game>(
+    "/games",
+    { params: { genres: genreId, parent_platforms: platformId } },
+    [genreId, platformId]
+  );
 
 export default useGames;
