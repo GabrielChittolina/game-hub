@@ -30,7 +30,7 @@ const GameCard = ({ game }: GameCardProps) => {
         borderTopRadius="lg"
       />
       <CardBody>
-        <HStack justify={"space-between"} mb="2">
+        <HStack justify={"space-between"} mb={3}>
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
@@ -46,7 +46,7 @@ const GameCard = ({ game }: GameCardProps) => {
             </Badge>
           </Tooltip>
         </HStack>
-        <Heading size="md">{game.name}</Heading>
+        <Heading fontSize={"2xl"}>{game.name}</Heading>
       </CardBody>
     </Card>
   );

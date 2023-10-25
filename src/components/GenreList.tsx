@@ -20,7 +20,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: GenreListProps) => {
 
   return (
     <>
-      <Heading size="xl" mb={5} mt={5}>
+      <Heading size="xl" mb={5}>
         Genres
       </Heading>
       {loading && <Spinner />}

@@ -8,7 +8,7 @@ interface NavBarProps {
 
 const NavBar = ({ onSearch }: NavBarProps) => {
   return (
-    <HStack>
+    <HStack spacing={5}>
       <Image borderRadius={"10"} src="https://via.placeholder.com/40" />
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />

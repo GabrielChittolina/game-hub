@@ -25,15 +25,13 @@ function App() {
         "nav nav"
         "aside main"
       `}
-      templateColumns="240px 1fr"
-      templateRows="80px 1fr"
       gap={4}
-      h="100vh"
+      px={10}
     >
-      <GridItem area="nav" p="10px">
+      <GridItem area="nav" colSpan={2} my={6}>
         <NavBar onSearch={(search) => setGameQuery({ ...gameQuery, search })} />
       </GridItem>
-      <GridItem area="aside" px={5}>
+      <GridItem area="aside" mr={5}>
         <GenreList
           selectedGenre={gameQuery.genre}
           onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
@@ -41,7 +39,7 @@ function App() {
       </GridItem>
       <GridItem area="main">
         <GameHeading gameQuery={gameQuery} />
-        <HStack p={5} spacing={5}>
+        <HStack spacing={5} mb={5}>
           <PlatformSelector
             selectedPlatform={gameQuery.platform}
             onSelectedPlatform={(platform) =>
