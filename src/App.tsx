@@ -27,6 +27,7 @@ function App() {
       `}
       gap={4}
       px={10}
+      templateColumns={"210px 1fr"}
     >
       <GridItem area="nav" colSpan={2} my={6}>
         <NavBar onSearch={(search) => setGameQuery({ ...gameQuery, search })} />
