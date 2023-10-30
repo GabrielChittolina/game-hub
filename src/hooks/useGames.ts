@@ -9,7 +9,7 @@ export interface Game {
   released: string;
   metacritic: number;
   background_image: string;
-  parent_platforms: { platform: Platform }[];
+  parent_platforms?: { platform: Platform }[];
 }
 
 const useGames = (gameQuery: GameQuery) =>

@@ -32,19 +32,21 @@ const GameCard = ({ game }: GameCardProps) => {
       <CardBody>
         <HStack justify={"space-between"} mb={3}>
           <PlatformIconList
-            platforms={game.parent_platforms.map((p) => p.platform)}
+            platforms={game.parent_platforms?.map((p) => p.platform)}
           />
-          <Tooltip label="Metascore" placement="top">
-            <Badge
-              variant="outline"
-              borderRadius="4px"
-              px="2"
-              colorScheme={metacriticColor()}
-              fontSize="md"
-            >
-              {game.metacritic}
-            </Badge>
-          </Tooltip>
+          {game.metacritic && (
+            <Tooltip label="Metascore" placement="top">
+              <Badge
+                variant="outline"
+                borderRadius="4px"
+                px="2"
+                colorScheme={metacriticColor()}
+                fontSize="md"
+              >
+                {game.metacritic}
+              </Badge>
+            </Tooltip>
+          )}
         </HStack>
         <Heading fontSize={"2xl"}>{game.name}</Heading>
       </CardBody>

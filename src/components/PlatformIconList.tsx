@@ -3,13 +3,13 @@ import { Platform } from "../hooks/usePlatforms";
 import platformIconMap from "../services/platform-icon-map";
 
 interface PlatformIconListProps {
-  platforms: Platform[];
+  platforms?: Platform[];
 }
 
 const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
   return (
-    <HStack spacing="2">
-      {platforms.map((platform) => {
+    <HStack spacing="2" minH={6}>
+      {platforms?.map((platform) => {
         return (
           <Tooltip key={platform.id} label={platform.name} placement="top">
             <Center>
