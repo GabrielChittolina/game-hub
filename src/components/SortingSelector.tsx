@@ -14,7 +14,6 @@ const SortingSelector = ({
     { label: "Relevance", value: "" },
     { label: "Name", value: "name" },
     { label: "Release date", value: "-released" },
-    { label: "Rating", value: "-rating" },
     { label: "Date added", value: "-added" },
     { label: "Popularity", value: "-metacritic" },
   ];
