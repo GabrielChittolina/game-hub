@@ -23,7 +23,7 @@ const GameCard = ({ game }: GameCardProps) => {
   };
 
   return (
-    <Card maxW="md">
+    <Card position={"relative"}>
       <Image
         src={getCroppedImageUrl(game.background_image, 600, 400)}
         alt={game.name}
