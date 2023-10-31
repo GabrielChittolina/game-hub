@@ -25,6 +25,7 @@ const SearchInput = ({ onSearch }: SearchInputProps) => {
           placeholder="Search games..."
           _dark={{ bg: "gray.700" }}
           bg="gray.100"
+          _focus={{ borderColor: "gray.500" }}
           variant="filled"
           ref={ref}
         />
