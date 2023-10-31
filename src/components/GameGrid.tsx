@@ -1,4 +1,10 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import SkeletonCard from "./SkeletonCard";
@@ -11,9 +17,20 @@ interface GameGridProps {
 const GameGrid = ({ gameQuery }: GameGridProps) => {
   const { data, error, loading } = useGames(gameQuery);
 
+  if (error) {
+    return (
+      <Alert status="error">
+        <AlertIcon />
+        <AlertTitle>Error loading games!</AlertTitle>
+        <AlertDescription>
+          Please refresh the page or try again later.
+        </AlertDescription>
+      </Alert>
+    );
+  }
+
   return (
     <>
-      {error && <Text>{error}</Text>}
       <SimpleGrid
         spacing="24px"
         columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }}
