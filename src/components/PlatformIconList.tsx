@@ -13,7 +13,7 @@ const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
         return (
           <Tooltip key={platform.id} label={platform.name} placement="top">
             <Center>
-              <Icon as={platformIconMap[platform.slug]} />
+              <Icon as={platformIconMap[platform.slug]} color={"gray.400"} />
             </Center>
           </Tooltip>
         );
