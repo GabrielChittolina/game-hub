@@ -23,11 +23,10 @@ const GameCard = ({ game }: GameCardProps) => {
   };
 
   return (
-    <Card position={"relative"}>
+    <Card overflow="hidden" position={"relative"}>
       <Image
         src={getCroppedImageUrl(game.background_image, 600, 400)}
         alt={game.name}
-        borderTopRadius="lg"
       />
       <CardBody>
         <HStack justify={"space-between"} mb={3}>

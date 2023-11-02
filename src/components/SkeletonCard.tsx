@@ -9,7 +9,7 @@ import {
 
 const SkeletonCard = () => {
   return (
-    <Card>
+    <Card overflow="hidden">
       <Skeleton h="200px" />
       <CardBody>
         <HStack>
