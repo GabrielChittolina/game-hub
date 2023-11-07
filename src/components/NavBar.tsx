@@ -9,7 +9,12 @@ interface NavBarProps {
 const NavBar = ({ onSearch }: NavBarProps) => {
   return (
     <HStack spacing={5}>
-      <Image borderRadius={"10"} src="https://via.placeholder.com/40" />
+      <Image
+        onClick={() => (window.location.href = "/")}
+        cursor="pointer"
+        borderRadius={"10"}
+        src="https://via.placeholder.com/40"
+      />
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>
