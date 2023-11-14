@@ -19,7 +19,9 @@ export interface GameQuery {
 }
 
 function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const [gameQuery, setGameQuery] = useState<GameQuery>({
+    pageSize: 20,
+  } as GameQuery);
 
   return (
     <Grid

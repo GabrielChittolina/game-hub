@@ -35,10 +35,10 @@ const GameGrid = ({ gameQuery }: GameGridProps) => {
         spacing="24px"
         columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }}
       >
-        {loading && [...Array(16)].map((_, i) => <SkeletonCard key={i} />)}
         {data.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
+        {loading && [...Array(20)].map((_, i) => <SkeletonCard key={i} />)}
       </SimpleGrid>
     </>
   );
