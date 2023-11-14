@@ -31,7 +31,11 @@ const useData = <T>(
           ...requestConfig,
         })
         .then((res) => {
-          setData(res.data.results);
+          setData((prevData) =>
+            requestConfig?.params?.page && requestConfig?.params?.page > 1
+              ? [...prevData, ...res.data.results]
+              : res.data.results
+          );
           setLoading(false);
           setError("");
         })
